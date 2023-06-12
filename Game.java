@@ -55,7 +55,7 @@ public class Game {
         double insurerencebets = player.yourbets/2;
         System.out.println("庄家可能有21点，是否下"+insurerencebets+"￥的保险注（Y/N）?");
         String youranswer;
-        youranswer = Main.sc.next();
+        youranswer = Poker21.sc.next();
     
 
         if(youranswer.equals("Y")){
@@ -107,9 +107,9 @@ public class Game {
 
     public static void isRegameOrCheckInfo(People player,People banker) throws IOException{
         System.out.println("是否还要再玩(Y/N)?你也可以查看你目前的战绩和信息(W/I)?");
-        switch(Main.sc.next().toLowerCase()){
+        switch(Poker21.sc.next().toLowerCase()){
             case "y":
-                Main.start(player, banker);
+                Poker21.start(player, banker);
                 break;
             case "n":
                 return ;
@@ -142,7 +142,7 @@ public class Game {
     public static void isHityouOrDoubleOrStop(People player,People banker) throws IOException {
         if(player.getYourCards().size()==2){
             System.out.println("选择你的操作：\n【D】双倍下注【H】要牌【S】停牌");
-            switch(Main.sc.next().toLowerCase()){
+            switch(Poker21.sc.next().toLowerCase()){
                 case "d":
                     doubleBets(player, banker);
                     break;
@@ -156,7 +156,7 @@ public class Game {
             }
         }else{
             System.out.println("选择你的操作：\n【H】要牌【S】停牌");
-            switch(Main.sc.next().toLowerCase()){
+            switch(Poker21.sc.next().toLowerCase()){
                 case "h":
                     hit(player,banker);
                     break;
