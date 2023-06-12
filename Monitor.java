@@ -2,7 +2,7 @@ import java.io.IOException;
 
 public class Monitor {
     public static void flushMonitor() throws IOException{
-        Runtime.getRuntime().exec("clear");
+        System.out.print("\033[H\033[2J");
     }
 
     public static void drwaMainMenu() throws IOException{
